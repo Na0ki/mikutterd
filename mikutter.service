@@ -1,0 +1,15 @@
+[Unit]
+Description=teokure
+After=network.target
+
+[Service]
+Type=simple
+User=USER_NAME
+Restart=always
+Environment="RBENV_VERSION=2.3.3"
+Environment="HOME=/home/USER_NAME"
+ExecStart=/home/USER_NAME/.rbenv/shims/ruby /home/USER_NAME/mikutter/mikutter.rb --confroot=/home/USER_NAME/config/ --plugin=ahiru_yakuna --debug
+
+[Install]
+WantedBy=multi-user.target
+
